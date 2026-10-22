@@ -47,6 +47,7 @@
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
       <a href="community.html">Community</a>
+      <a class="nav-gh" href="https://github.com/lordillusions/sonora" aria-label="Sonora source code on GitHub"><svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
       <a class="btn btn-primary btn-small" href="download.html">Download the alpha</a>
     </nav>
   </div>
@@ -60,12 +61,12 @@
       <div>
         <span class="eyebrow">Download</span>
         <h1>Get Sonora.</h1>
-        <p class="lede">Free, with no account and no time limit. All files are published on GitHub Releases.</p>
+        <p class="lede">Free and open source, with no account and no time limit.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="https://github.com/lordillusions/sonora/releases/latest">Download for Mac (Apple silicon)</a>
+          <a class="btn btn-primary" id="dl-primary" href="#files">Choose your download</a>
           <a class="btn btn-ghost" href="#files">All downloads</a>
         </div>
-        <p class="small faint" style="margin-top:16px">Requires macOS 13 Ventura or later on an M1 or newer Mac. On the release page, pick the <code>.dmg</code> file.</p>
+        <p class="small faint" id="dl-note" style="margin-top:16px">Pick the file for your computer below.</p>
         <p class="small" style="margin-top:8px"><span class="badge badge-alpha">Alpha</span> Expect bugs. <a href="#alpha">Read this first</a>.</p>
       </div>
       <figure class="shot hide-narrow"><img src="assets/img/splash.webp" width="1200" height="720" alt="Sonora's start-up window: the Sonora wordmark and the tagline Music production, open."></figure>
@@ -91,41 +92,53 @@
 <section id="files">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Downloads</span>
-      <h2>Pick your file</h2>
-      <p class="lede">Every link opens the latest release on GitHub. Each file there has a <code>.sha256</code> checksum next to it.</p>
+      <span class="eyebrow">Sonora DAW</span>
+      <h2>Pick your system</h2>
+      <p class="lede">These links always fetch the latest release. Older versions and the <code>.sha256</code> checksums are on <a href="https://github.com/lordillusions/sonora/releases">GitHub Releases</a>, next to the source code.</p>
     </div>
-    <div class="grid">
-      <div class="card dl-card main">
+    <div class="grid dl-grid">
+      <div class="card dl-card" data-os="mac">
         <span class="tag">macOS · Apple silicon · Alpha</span>
         <h3>Sonora for Mac</h3>
         <p>The main version. Open the disk image and drag Sonora to Applications. Updates itself from then on.</p>
-        <p class="file">Sonora-&lt;version&gt;.dmg</p>
-        <a class="btn btn-primary btn-small" href="https://github.com/lordillusions/sonora/releases/latest">Get the .dmg</a>
+        <p class="file">Sonora-macOS.dmg</p>
+        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest/download/Sonora-macOS.dmg">Download for Mac</a>
       </div>
-      <div class="card dl-card">
-        <span class="tag">macOS · Apple silicon · VST3 · Alpha</span>
-        <h3>Sonora Prism plug-in</h3>
-        <p>The Sonora Prism synth as a VST3 plug-in for other hosts. Installs for all users or just for you. You don't need it to use Prism inside Sonora.</p>
-        <p class="file">Sonora-Prism-VST3-&lt;version&gt;.pkg</p>
-        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest">Get the .pkg</a>
-      </div>
-      <div class="card dl-card">
+      <div class="card dl-card" data-os="windows">
         <span class="tag">Windows x64 · Early alpha</span>
         <h3>Sonora for Windows</h3>
         <p>An early build, much less tested than the Mac version. No automatic updates yet, and Windows will warn about an unknown publisher.</p>
-        <p class="file">Sonora-&lt;version&gt;-windows-x64-setup.exe</p>
-        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest">Get the .exe</a>
+        <p class="file">Sonora-Windows-x64-setup.exe</p>
+        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest/download/Sonora-Windows-x64-setup.exe">Download for Windows</a>
       </div>
-      <div class="card dl-card">
+      <div class="card dl-card" data-os="linux">
         <span class="tag">Linux x64 · Early alpha</span>
         <h3>Sonora for Linux</h3>
         <p>An AppImage (make it executable and run it) or a <code>.deb</code> package for Debian and Ubuntu. No automatic updates yet.</p>
-        <p class="file">Sonora-&lt;version&gt;-x86_64.AppImage<br>sonora_&lt;version&gt;_amd64.deb</p>
-        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest">Get AppImage or .deb</a>
+        <p class="file">Sonora-Linux-x86_64.AppImage<br>Sonora-Linux-amd64.deb</p>
+        <div class="btn-row"><a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest/download/Sonora-Linux-x86_64.AppImage">AppImage</a><a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest/download/Sonora-Linux-amd64.deb">.deb</a></div>
       </div>
     </div>
-    <p class="table-note">Alpha builds may not be signed by Apple or Microsoft yet. If macOS says it can't check the app, Control-click Sonora in Applications and choose Open. Only download Sonora from the GitHub repository linked here.</p>
+    <p class="table-note">Alpha builds may not be signed by Apple or Microsoft yet. If macOS says it can't check the app, Control-click Sonora in Applications and choose Open. Only download Sonora from this site or from <a href="https://github.com/lordillusions/sonora/releases">its GitHub repository</a>.</p>
+  </div>
+</section>
+
+<section id="prism">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Also free</span>
+      <h2>Sonora Prism for other DAWs</h2>
+      <p class="lede">Prism is already inside Sonora. If you also want it in another music program, install the VST3 plug-in.</p>
+    </div>
+    <div class="grid">
+      <div class="card dl-card">
+        <span class="tag">macOS · Apple silicon · VST3 · Alpha</span>
+        <h3>Sonora Prism plug-in</h3>
+        <p>A powerful wavetable synth as a VST3 plug-in. Installs for all users or just for you, then rescan plug-ins in your host.</p>
+        <p class="file">Sonora-Prism-VST3-macOS.pkg</p>
+        <a class="btn btn-ghost btn-small" href="https://github.com/lordillusions/sonora/releases/latest/download/Sonora-Prism-VST3-macOS.pkg">Download the plug-in</a>
+      </div>
+    </div>
   </div>
 </section>
 

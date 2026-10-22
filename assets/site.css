@@ -63,7 +63,7 @@ code, pre { font-family: var(--font-mono); font-size: 0.88em; }
 .brand img.word { height: 17px; width: auto; }
 .nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
 .nav a {
-    color: var(--text-muted); text-decoration: none; font-size: 15px;
+    color: var(--text-muted); text-decoration: none; font-size: 15px; white-space: nowrap;
     padding: 8px 12px; border-radius: 999px;
 }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ink); background: var(--bg-raised); }
@@ -297,3 +297,17 @@ details > div { padding: 0 0 18px; color: var(--text-muted); max-width: 48em; }
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: var(--radius-small); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* GitHub link in the header, the home page's source button and open-source line */
+.nav a.nav-gh { display: inline-flex; align-items: center; gap: 6px; }
+.btn-gh { display: inline-flex; align-items: center; gap: 8px; }
+.btn-gh svg, .nav-gh svg { flex: none; }
+@media (min-width: 981px) and (max-width: 1180px) { .nav a.nav-gh span { display: none; } } /* icon only when tight */
+.oss-line { margin-top: 18px; color: var(--text-muted); font-size: 15px; }
+.oss-line .badge { margin-right: 8px; }
+
+/* Download cards: the visitor's system first, marked */
+.dl-yours { align-self: flex-start; margin-bottom: 12px; }
+.dl-card .btn-row { margin-top: auto; gap: 8px; }
+.dl-card .btn-row .btn { margin-top: 0; }
+
